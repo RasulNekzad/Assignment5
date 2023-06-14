@@ -9,7 +9,19 @@ function addNewRow() {
     rows.appendChild(newRow);
 }
 
-function removeRow(){
+function removeRow() {
     var row = document.getElementById("grid-rows");
     row.parentNode.deleteRow(row);
+}
+
+function removeColumn() {
+    cells = 1;
+    let table = document.getElementById("grid");
+    let lastColumn = table.rows[0].cells.length - 1;
+
+    for (let i = 0; i < table.rows.length; i++) {
+        for (let j = lastColumn; j > 0; j--) {
+            table.rows[i].deleteCell(j);
+        }
+    }
 }
