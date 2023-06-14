@@ -9,6 +9,18 @@ function addNewRow() {
     rows.appendChild(newRow);
 }
 
+function addNewColumn() {
+    var cols = document.getElementById("grid-columns");
+    var numRows = document.getElementById("grid-rows").children.length;
+    var rows = document.getElementById("grid-rows");
+    cols.appendChild(document.createElement("th"));
+    var allRows = rows.getElementsByTagName("tr");
+    for (let i = 0; i < allRows.length; i++) {
+        var newCol = document.createElement("td");
+        allRows[i].appendChild(newCol);
+    }
+}
+
 function removeRow() {
     var row = document.getElementById("grid-rows");
     row.parentNode.deleteRow(row);
