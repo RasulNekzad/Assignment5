@@ -8,3 +8,8 @@ function addNewRow() {
     }
     rows.appendChild(newRow);
 }
+
+function removeRow(){
+    var row = document.getElementById("grid-rows");
+    row.parentNode.deleteRow(row);
+}
