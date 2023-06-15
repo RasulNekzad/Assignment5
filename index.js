@@ -38,3 +38,15 @@ function removeColumn() {
         allRows[i].lastElementChild.remove();
     }
 }
+
+function fillAllCell() {
+    selectedColor = document.getElementById("color-picker").value;
+    var tHeadCells = document.getElementById("grid-columns").getElementsByTagName("th");
+    for (let i = 0; i < tHeadCells.length; i++) {
+        tHeadCells[i].style.backgroundColor = selectedColor;
+    }
+    var tBodyCells = document.getElementById("grid-rows").getElementsByTagName("td");
+    for (let i = 0; i < tBodyCells.length; i++) {
+        tBodyCells[i].style.backgroundColor = selectedColor;
+    }
+}
