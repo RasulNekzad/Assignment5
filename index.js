@@ -52,10 +52,10 @@ function fillAllCell() {
 }
 
 var table = document.getElementById("grid");
-var row = document.getElementById("grid-rows").children.length;
-var col = document.getElementById("grid-columns").children.length;
-for(let i = 0; i < row; i++){
-    for(let j = 0; j < col; j++){
+var rows = table.rows;
+var numCols = rows[0].cells.length;
+for(let i = 0; i < rows.length; i++){
+    for(let j = 0; j < numCols; j++){
         let currentCell = table.rows[i].cells[j];
         currentCell.onclick = function(){
             let selectedColor = document.getElementById("color-picker").value;
