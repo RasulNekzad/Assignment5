@@ -1,5 +1,7 @@
+//adding on click handler to the intial cells (cells that are already loaded before hand)
 assignCallEventHandlers();
 
+//adds new row to the grid and is called when the add row button is clicked
 function addNewRow() {
     var rows = document.getElementById("grid-rows");
     var numCols = document.getElementById("grid-columns").children.length;
@@ -9,9 +11,11 @@ function addNewRow() {
         newRow.appendChild(newCol);
     }
     rows.appendChild(newRow);
+    //adding onclick to new cells
     assignCallEventHandlers();
 }
 
+//adds new column to the grid and is called when the add column button is clicked
 function addNewColumn() {
     var cols = document.getElementById("grid-columns");
     var numRows = document.getElementById("grid-rows").children.length;
@@ -22,14 +26,17 @@ function addNewColumn() {
         var newCol = document.createElement("td");
         allRows[i].appendChild(newCol);
     }
+    //adding onclick to new cells
     assignCallEventHandlers();
 }
 
+//removes row from the grid
 function removeRow() {
     var row = document.getElementById("grid-rows");
     row.lastElementChild.remove();
 }
 
+//removes column from the grid
 function removeColumn() {
     var cols = document.getElementById("grid-columns");
     if (cols.lastElementChild != cols.firstElementChild) {
@@ -43,9 +50,11 @@ function removeColumn() {
     }
 }
 
+//fills all the cell with selected color
 function fillAllCell() {
     selectedColor = document.getElementById("color-picker").value;
     var tHeadCells = document.getElementById("grid-columns").getElementsByTagName("th");
+    //the two loops color all the cells
     for (let i = 0; i < tHeadCells.length; i++) {
         tHeadCells[i].style.backgroundColor = selectedColor;
     }
@@ -55,6 +64,7 @@ function fillAllCell() {
     }
 }
 
+//a function that adds onclick to all the cells
 function assignCallEventHandlers() {
     var table = document.getElementById("grid");
     var rows = table.rows;
@@ -106,7 +116,7 @@ function restore() {
     }
 }
 
-
+//fills all the colors to cells that are not colored with the selected color 
 function fillUncoloredCell() {
     selectedColor = document.getElementById("color-picker").value;
     var tHeadCells = document.getElementById("grid-columns").getElementsByTagName("th");
