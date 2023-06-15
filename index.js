@@ -23,7 +23,7 @@ function addNewColumn() {
 
 function removeRow() {
     var row = document.getElementById("grid-rows");
-    row.parentNode.deleteRow(row);
+    row.lastElementChild.remove();
 }
 
 function removeColumn() {
