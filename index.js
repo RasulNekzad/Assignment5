@@ -7,6 +7,7 @@ function addNewRow() {
         newRow.appendChild(newCol);
     }
     rows.appendChild(newRow);
+    assignCallEventHandlers();
 }
 
 function addNewColumn() {
@@ -19,6 +20,7 @@ function addNewColumn() {
         var newCol = document.createElement("td");
         allRows[i].appendChild(newCol);
     }
+    assignCallEventHandlers();
 }
 
 function removeRow() {
@@ -51,15 +53,17 @@ function fillAllCell() {
     }
 }
 
-var table = document.getElementById("grid");
-var rows = table.rows;
-var numCols = rows[0].cells.length;
-for(let i = 0; i < rows.length; i++){
-    for(let j = 0; j < numCols; j++){
-        let currentCell = table.rows[i].cells[j];
-        currentCell.onclick = function(){
-            let selectedColor = document.getElementById("color-picker").value;
-            currentCell.style.backgroundColor = selectedColor;
+function assignCallEventHandlers(){
+    var table = document.getElementById("grid");
+    var rows = table.rows;
+    var numCols = rows[0].cells.length;
+    for(let i = 0; i < rows.length; i++){
+        for(let j = 0; j < numCols; j++){
+            let currentCell = table.rows[i].cells[j];
+            currentCell.onclick = function(){
+                let selectedColor = document.getElementById("color-picker").value;
+                currentCell.style.backgroundColor = selectedColor;
+            }
         }
     }
 }
