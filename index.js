@@ -28,7 +28,9 @@ function removeRow() {
 
 function removeColumn() {
     var cols = document.getElementById("grid-columns");
-    cols.lastElementChild.remove();
+    if (cols.lastElementChild!=cols.firstElementChild){
+        cols.lastElementChild.remove();
+    }
     var rows = document.getElementById("grid-rows");
     var numRows = rows.children.length;
     var allRows = rows.getElementsByTagName("tr");
