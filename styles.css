@@ -1,5 +1,12 @@
-table, tr, td, th{
+body { 
     text-align: center;
+}
+
+#grid {
+    margin-left:auto;
+    margin-right:auto ;
+}
+table, tr, td, th{
     border: 1px solid black;
     border-collapse: collapse;
 }
@@ -8,3 +15,24 @@ tr, td{
     width:2em;
     height:2em;
 }
+
+button{
+    width: 11em;
+    background-color: #38319f48;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #862ba2f1;
+}
+
+select option {
+    margin: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+  }
