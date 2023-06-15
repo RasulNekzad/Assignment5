@@ -98,10 +98,10 @@ addEventListener("mouseup", handleMouseUp);
 function restore() {
     var tHeadCells = document.getElementById("grid-columns").getElementsByTagName("th");
     for (let i = 0; i < tHeadCells.length; i++) {
-        tHeadCells[i].style.backgroundColor = "white";
+        tHeadCells[i].style.backgroundColor = "";
     }
     var tBodyCells = document.getElementById("grid-rows").getElementsByTagName("td");
     for (let i = 0; i < tBodyCells.length; i++) {
-        tBodyCells[i].style.backgroundColor = "white";
+        tBodyCells[i].style.backgroundColor = "";
     }
 }
