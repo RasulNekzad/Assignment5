@@ -9,11 +9,17 @@ body {
 table, tr, td, th{
     border: 1px solid black;
     border-collapse: collapse;
+    background-color: white;
+}
+
+#grid-column{
+    background-color: white;
 }
 
 tr, td, th{
     width:2em;
     height:2em;
+    background-color: white;
 }
 
 button{
