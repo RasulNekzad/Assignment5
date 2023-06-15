@@ -1,3 +1,5 @@
+assignCallEventHandlers();
+
 function addNewRow() {
     var rows = document.getElementById("grid-rows");
     var numCols = document.getElementById("grid-columns").children.length;
@@ -65,5 +67,16 @@ function assignCallEventHandlers(){
                 currentCell.style.backgroundColor = selectedColor;
             }
         }
+    }
+}
+
+function restore() {
+    var tHeadCells = document.getElementById("grid-columns").getElementsByTagName("th");
+    for (let i = 0; i < tHeadCells.length; i++) {
+        tHeadCells[i].style.backgroundColor = "white";
+    }
+    var tBodyCells = document.getElementById("grid-rows").getElementsByTagName("td");
+    for (let i = 0; i < tBodyCells.length; i++) {
+        tBodyCells[i].style.backgroundColor = "white";
     }
 }
