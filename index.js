@@ -27,13 +27,12 @@ function removeRow() {
 }
 
 function removeColumn() {
-    cells = 1;
-    let table = document.getElementById("grid");
-    let lastColumn = table.rows[0].cells.length - 1;
-
-    for (let i = 0; i < table.rows.length; i++) {
-        for (let j = lastColumn; j > 0; j--) {
-            table.rows[i].deleteCell(j);
-        }
+    var cols = document.getElementById("grid-columns");
+    cols.lastElementChild.remove();
+    var rows = document.getElementById("grid-rows");
+    var numRows = rows.children.length;
+    var allRows = rows.getElementsByTagName("tr");
+    for (let i = 0; i < numRows; i++) {
+        allRows[i].lastElementChild.remove();
     }
 }
