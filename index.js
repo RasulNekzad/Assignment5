@@ -67,3 +67,29 @@ function assignCallEventHandlers(){
         }
     }
 }
+
+var isDragging = false;
+function handleMouseDown(e) {
+    var currentElement = document.elementFromPoint(e.clientX, e.clientY);
+    if (currentElement.tagName === "TD" || currentElement.tagName === "TH") {
+        isDragging = true;
+    }
+}
+
+function handleMouseOver(e) {
+    if (isDragging) {
+        var currentElement = document.elementFromPoint(e.clientX, e.clientY);
+        if (currentElement.tagName === "TD" || currentElement.tagName === "TH") {
+            selectedColor = document.getElementById("color-picker").value;
+            currentElement.style.backgroundColor = selectedColor;
+        }
+    }
+}
+
+function handleMouseUp() {
+    isDragging = false;
+}
+
+addEventListener("mousedown", handleMouseDown);
+addEventListener("mouseover", handleMouseOver);
+addEventListener("mouseup", handleMouseUp);
