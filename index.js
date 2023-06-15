@@ -32,7 +32,7 @@ function removeRow() {
 
 function removeColumn() {
     var cols = document.getElementById("grid-columns");
-    if (cols.lastElementChild!=cols.firstElementChild){
+    if (cols.lastElementChild != cols.firstElementChild) {
         cols.lastElementChild.remove();
     }
     var rows = document.getElementById("grid-rows");
@@ -55,14 +55,14 @@ function fillAllCell() {
     }
 }
 
-function assignCallEventHandlers(){
+function assignCallEventHandlers() {
     var table = document.getElementById("grid");
     var rows = table.rows;
     var numCols = rows[0].cells.length;
-    for(let i = 0; i < rows.length; i++){
-        for(let j = 0; j < numCols; j++){
+    for (let i = 0; i < rows.length; i++) {
+        for (let j = 0; j < numCols; j++) {
             let currentCell = table.rows[i].cells[j];
-            currentCell.onclick = function(){
+            currentCell.onclick = function () {
                 let selectedColor = document.getElementById("color-picker").value;
                 currentCell.style.backgroundColor = selectedColor;
             }
@@ -103,5 +103,24 @@ function restore() {
     var tBodyCells = document.getElementById("grid-rows").getElementsByTagName("td");
     for (let i = 0; i < tBodyCells.length; i++) {
         tBodyCells[i].style.backgroundColor = "";
+    }
+}
+
+
+function fillUncoloredCell() {
+    selectedColor = document.getElementById("color-picker").value;
+    var tHeadCells = document.getElementById("grid-columns").getElementsByTagName("th");
+    for (let i = 0; i < tHeadCells.length; i++) {
+        var headCell = tHeadCells[i];
+        if (!headCell.style.backgroundColor) {
+            headCell.style.backgroundColor = selectedColor;
+        }
+    }
+    var tBodyCells = document.getElementById("grid-rows").getElementsByTagName("td");
+    for (let i = 0; i < tBodyCells.length; i++) {
+        var bodyCell = tBodyCells[i];
+        if (!bodyCell.style.backgroundColor) {
+            bodyCell.style.backgroundColor = selectedColor;
+        }
     }
 }

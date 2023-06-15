@@ -1,22 +1,28 @@
-body { 
+body {
     text-align: center;
 }
 
 #grid {
-    margin-left:auto;
-    margin-right:auto ;
+    margin-left: auto;
+    margin-right: auto;
 }
-table, tr, td, th{
+
+table,
+tr,
+td,
+th {
     border: 1px solid black;
     border-collapse: collapse;
 }
 
-tr, td, th{
-    width:2em;
-    height:2em;
+tr,
+td,
+th {
+    width: 2em;
+    height: 2em;
 }
 
-button{
+button {
     width: 11em;
     background-color: #38319f48;
     color: white;
@@ -27,7 +33,7 @@ button{
     cursor: pointer;
 }
 
-button:hover{
+button:hover {
     background-color: #862ba2f1;
 }
 
@@ -35,4 +41,4 @@ select option {
     margin: 40px;
     background: rgba(0, 0, 0, 0.3);
     color: #fff;
-  }
+}
